@@ -124,9 +124,8 @@ def critic_agent(state: AgentState):
     {research}
     
     Task:
-    1. Critique the findings for any missing safety steps, aviation regulations (CAASL), or customs laws.
-    2. Format a FINAL professional compliance checklist and report that can be given to a Sri Lankan SME exporter.
-    Make it look highly professional using Markdown.
+    Review the researcher's findings and provide a simple, clear, and highly accurate answer directly to the user.
+    Do not generate a massive report or checklist unless explicitly requested by the user. Just give the exact information they need concisely and professionally.
     """
     
     response = critic_llm.invoke([HumanMessage(content=prompt)])
