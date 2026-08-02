@@ -49,11 +49,10 @@ researcher_llm = ChatGroq(
     temperature=0.2
 )
 
-# 3. Critic Model: Free high-reasoning model via OpenRouter
-critic_llm = ChatOpenAI(
-    api_key=OR_KEY,
-    base_url="https://openrouter.ai/api/v1",
-    model="google/gemma-4-31b-it:free", # Free tier model on OpenRouter
+# 3. Critic Model: High-reasoning model via Groq (Switched from OpenRouter due to unstable free tier)
+critic_llm = ChatGroq(
+    api_key=GROQ_KEY,
+    model="llama-3.3-70b-versatile",
     temperature=0.3
 )
 

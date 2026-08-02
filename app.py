@@ -33,7 +33,7 @@ with st.sidebar:
         "Model": [
             "llama-3.1-8b (Groq)",
             "llama-3.3-70b (Groq)",
-            "gemma-4-31b-it (OpenRouter)",
+            "llama-3.3-70b (Groq)",
             "llama-3.2-11b-vision (Groq)"
         ],
         "Reasoning": [
