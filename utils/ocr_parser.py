@@ -6,9 +6,8 @@ from langchain_core.messages import HumanMessage
 from langchain_groq import ChatGroq
 from PIL import Image
 
-def get_vision_llm():
-    """Initialize the Groq Vision model."""
-    # We use llama-3.2-11b-vision-preview as it is free on Groq
+def get_llm(model_name: str):
+    """Initialize a Groq LLM."""
     try:
         api_key = st.secrets["GROQ_API_KEY"]
     except Exception:
@@ -24,7 +23,7 @@ def get_vision_llm():
             
     return ChatGroq(
         api_key=api_key,
-        model="llama-3.2-11b-vision-preview",
+        model=model_name,
         temperature=0.1
     )
 
@@ -55,7 +54,7 @@ def extract_text_from_image_or_pdf(uploaded_file) -> str:
             
             # Since the user requested Vision LLM specifically, we still use an LLM to parse the extracted text
             # into the required format.
-            llm = get_vision_llm()
+            llm = get_llm("llama-3.3-70b-versatile") # Use a stable text model for PDFs
             msg = HumanMessage(
                 content=f"You are a logistics data extractor. Extract cargo product names, weights, dimensions, and destination countries from this text extracted from a PDF invoice/airway bill. Format clearly.\n\n{text}"
             )
@@ -82,7 +81,7 @@ def extract_text_from_image_or_pdf(uploaded_file) -> str:
             Present the extracted data in a clear, structured format. If any field is missing, state 'Not specified'.
             """
             
-            llm = get_vision_llm()
+            llm = get_llm("llama-3.2-90b-vision-preview")
             
             # Create message for LangChain ChatGroq Vision
             mime_type = f"image/{'jpeg' if file_extension == 'jpg' else file_extension}"
