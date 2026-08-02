@@ -53,7 +53,7 @@ researcher_llm = ChatGroq(
 critic_llm = ChatOpenAI(
     api_key=OR_KEY,
     base_url="https://openrouter.ai/api/v1",
-    model="google/gemini-2.0-flash-exp:free", # Free tier model on OpenRouter
+    model="google/gemma-4-31b-it:free", # Free tier model on OpenRouter
     temperature=0.3
 )
 
