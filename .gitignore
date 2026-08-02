@@ -1,0 +1,19 @@
+# Secrets
+.streamlit/secrets.toml
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+*.pyo
+*.pyd
+
+# Vector Store
+chroma_db/
+
+# OS generated files
+.DS_Store
+Thumbs.db
