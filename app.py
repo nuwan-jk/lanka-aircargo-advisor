@@ -32,7 +32,7 @@ with st.sidebar:
         "Role": ["Router", "Researcher (RAG)", "Critic", "OCR Scanner"],
         "Model": [
             "llama-3.1-8b (Groq)",
-            "mixtral-8x7b (Groq)",
+            "llama-3.3-70b (Groq)",
             "gemini-2.0-flash (OpenRouter)",
             "llama-3.2-11b-vision (Groq)"
         ],
