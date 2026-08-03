@@ -1,7 +1,7 @@
 # LankaAir Cargo & Export Compliance Advisor ✈️
 
 ## Project Description
-The **LankaAir Cargo & Export Compliance Advisor** is a production-ready Agentic AI application designed specifically to solve logistics problems for Sri Lankan SME exporters. SMEs often struggle with navigating complex export regulations, air cargo rates, dangerous goods classifications, and customs clearances. This application provides an intelligent conversational interface backed by a Retrieval-Augmented Generation (RAG) pipeline trained on 20+ authentic domain-specific documents (SriLankan Airlines Cargo rules, Civil Aviation Authority regulations, and Customs/EDB guidelines). It also features an AI Vision-powered OCR Scanner for automated data extraction from airway bills and invoices.
+The **LankaAir Cargo & Export Compliance Advisor** is a production-ready Agentic AI application designed specifically to solve logistics problems for Sri Lankan SME exporters. SMEs often struggle with navigating complex export regulations, air cargo rates, dangerous goods classifications, and customs clearances. This application provides an intelligent conversational interface backed by a Retrieval-Augmented Generation (RAG) pipeline trained on authentic domain-specific documents (SriLankan Airlines Cargo rules, Civil Aviation Authority regulations, and Customs/EDB guidelines).
 
 ---
 
@@ -58,9 +58,8 @@ To balance **latency, cost, context window, and reasoning quality**, a multi-mod
 | Agent / Component | Provider | Model | Justification |
 | :--- | :--- | :--- | :--- |
 | **Router Agent** | Groq | `llama-3.1-8b-instant` | Chosen for **ultra-low latency** and zero cost. Intent classification does not require heavy reasoning. |
-| **Researcher (RAG)** | Groq | `mixtral-8x7b-32768` | Chosen for its **32k context window** (crucial for processing multiple RAG document chunks) and fast token generation. |
-| **Compliance Critic** | OpenRouter | `google/gemini-2.0-flash-exp:free` | Chosen for **superior reasoning** ability when auditing legal compliance. A highly capable free model. |
-| **OCR Scanner** | Groq | `llama-3.2-11b-vision-preview` | Chosen to process Base64 image data (airway bills/invoices) completely free of charge with high accuracy. |
+| **Researcher (RAG)** | Groq | `llama-3.3-70b-versatile` | Chosen for its **32k context window** (crucial for processing multiple RAG document chunks) and high knowledge retrieval capabilities. |
+| **Compliance Critic** | Groq | `llama-3.3-70b-versatile` | Chosen for **superior reasoning** ability when auditing legal compliance. A highly capable free model that replaced OpenRouter due to rate limits. |
 
 ---
 
@@ -101,5 +100,4 @@ To balance **latency, cost, context window, and reasoning quality**, a multi-mod
 ---
 
 ## Known Limitations
-- **PDF OCR Dependencies**: The current OCR scanner extracts raw text from PDFs using `pypdf` rather than rendering pages as images, to avoid complex Poppler installations on Windows. True visual OCR is reserved for PNG/JPG images.
-- **Rate Limits**: Since free models are utilized on Groq and OpenRouter, the application may hit rate limits (Requests Per Minute) if used extensively by multiple concurrent users.
+- **Rate Limits**: Since free models are utilized on Groq, the application may hit rate limits (Requests Per Minute) if used extensively by multiple concurrent users.
