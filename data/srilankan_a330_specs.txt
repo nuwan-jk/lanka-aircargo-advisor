@@ -1,0 +1,11 @@
+SRILANKAN AIRLINES CARGO - A330 AIRCRAFT SPECIFICATIONS AND PAYLOAD LIMITS
+
+1. Aircraft Type: Airbus A330-300
+2. Max Payload: 45,000 kg (varies depending on passenger load and fuel)
+3. Cargo Door Dimensions:
+   - Forward Cargo Door: 244 x 169 cm
+   - Aft Cargo Door: 244 x 169 cm
+   - Bulk Cargo Door: 95 x 95 cm
+4. Pallet Capacity: Can accommodate up to 32 LD3 containers or 11 standard 88x125 inch pallets.
+5. Temperature Control: The aft cargo hold is equipped with precise temperature control suitable for perishables (2°C to 8°C) and live animals.
+6. Special Cargo: Heavy machinery must be strapped securely using designated floor tracks. Max floor load is 730 kg/sq meter.
